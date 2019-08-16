@@ -111,7 +111,7 @@ namespace Laboratorio_1_OOP_201902
         }
         public void AddRangeCard(int PlayerId, CombatCard combatCard)
         {
-            throw new NotImplementedException();
+            PlayerId.;
         }
         public void AddLongRangeCard(int PlayerId, CombatCard combatCard)
         {

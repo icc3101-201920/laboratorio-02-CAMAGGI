@@ -67,6 +67,12 @@ namespace Laboratorio_1_OOP_201902
                 this.deck = value;
             }
         }
+
+        internal int LifePoints()
+        {
+            throw new NotImplementedException();
+        }
+
         public Hand Hand
         {
             get

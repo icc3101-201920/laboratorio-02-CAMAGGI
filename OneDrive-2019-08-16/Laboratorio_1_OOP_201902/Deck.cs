@@ -7,8 +7,8 @@ namespace Laboratorio_1_OOP_201902
 {
     public class Deck
     {
-        protected List<CombatCard> combatCards;
-        protected List<SpecialCard> SpecialCards;
+        protected List<CombatCard> combatCards01;
+        protected List<SpecialCard> SpecialCards01;
 
         public Deck()
         {
@@ -17,20 +17,20 @@ namespace Laboratorio_1_OOP_201902
 
         public List<CombatCard> CombatCards
         {
-            get => combatCards; set => combatCards = value;
+            get => combatCards01; set => combatCards01 = value;
         }
         public List<SpecialCard> SpecialCards1
         {
-            get => SpecialCards; set => SpecialCards = value;
+            get => SpecialCards01; set => SpecialCards01 = value;
         }
 
         public void AddCombatCard(CombatCard combatCard)
         {
-            throw new NotImplementedException();
+           combatCards01.Add(combatCard);
         }
         public void AddSpecialCard(SpecialCard specialCard)
         {
-            throw new NotImplementedException();
+            SpecialCards01.Add(specialCard);
         }
         public void DestroyCombatCard(int cardId)
         {

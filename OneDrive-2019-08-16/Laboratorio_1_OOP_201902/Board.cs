@@ -102,40 +102,48 @@ namespace Laboratorio_1_OOP_201902
             this.captainCards = new SpecialCard[DEFAULT_NUMBER_OF_PLAYERS];
         }
 
-        
+
 
         //Metodos
-        public void AddMeleeCard(int PlayerId, CombatCard combatCard)
+        public void AddCombatCard(int PlayerId, CombatCard combatCard)
         {
-            throw new NotImplementedException();
-        }
-        public void AddRangeCard(int PlayerId, CombatCard combatCard)
-        {
-            PlayerId.;
-        }
-        public void AddLongRangeCard(int PlayerId, CombatCard combatCard)
-        {
-            throw new NotImplementedException();
+            string caseswitch = combatCard.Type;
+            switch (caseswitch)
+            { 
+                case "melee":
+                    meleeCards[PlayerId - 1].Add(combatCard);
+                    break;
+                case "range":
+                    rangeCards[PlayerId - 1].Add(combatCard);
+                    break;
+                case "longrange":
+                    longRangeCards[PlayerId - 1].Add(combatCard);
+                    break;
+                default:
+                    break;
+
+
+            }
         }
         public void AddCaptainCard(int PlayerId, SpecialCard specialCard)
         {
-            throw new NotImplementedException();
+            captainCards.SetValue(specialCard,PlayerId-1);
         }
         public void AddWeatherCard(int PlayerId, SpecialCard specialCard)
         {
-            throw new NotImplementedException();
+            weatherCards.Add(specialCard);
         }
         public void DestroyMeleeCard(int PlayerId)
         {
-            throw new NotImplementedException();
+            meleeCards[PlayerId - 1].Clear();
         }
         public void DestroyRangeCard(int PlayerId)
         {
-            throw new NotImplementedException();
+            rangeCards[PlayerId - 1].Clear();
         }
         public void DestroyLongRangeCard(int PlayerId)
         {
-            throw new NotImplementedException();
+            longRangeCards[PlayerId - 1].Clear();
         }
         public void DestroySpecialMeleeCard(int PlayerId)
         {
@@ -153,17 +161,56 @@ namespace Laboratorio_1_OOP_201902
         {
             throw new NotImplementedException();
         }
-        public int[] GetMeleeAttackPoints()
+        public int[,] GetMeleeAttackPoints()
         {
-            throw new NotImplementedException();
+            int[,] MeleeAP;
+            int meleeAtackPointsP0 = 0;
+            int meleeAtackPointsP1 = 0;
+            for (int i = 0; i < meleeCards[0].Count; i++)
+            {
+                meleeAtackPointsP0 += meleeCards[0][i].AttackPoints;
+            }
+            for (int i = 0; i < meleeCards[1].Count; i++)
+            {
+                meleeAtackPointsP1 += meleeCards[1][i].AttackPoints;
+            }
+            MeleeAP = new int[meleeAtackPointsP0, meleeAtackPointsP1];
+            return MeleeAP;
+
         }
-        public int[] GetRangeAttackPoints()
+        public int[,] GetRangeAttackPoints()
         {
-            throw new NotImplementedException();
+            
+            int[,] RangeAP;
+            int rangeAtackPointsP0 = 0;
+            int rangeAtackPointsP1 = 0;
+            for (int i = 0; i < rangeCards[0].Count; i++)
+            {
+                rangeAtackPointsP0 += rangeCards[0][i].AttackPoints;
+            }
+            for (int i = 0; i < rangeCards[1].Count; i++)
+            {
+                rangeAtackPointsP1 += rangeCards[1][i].AttackPoints;
+            }
+            RangeAP = new int[rangeAtackPointsP0, rangeAtackPointsP1];
+            return RangeAP;
+            
         }
-        public int[] GetLongRangeAttackPoints()
+        public int[,] GetLongRangeAttackPoints()
         {
-            throw new NotImplementedException();
+            int[,] LRangeAP;
+            int longRangeAtackPointsP0 = 0;
+            int longRangeAtackPointsP1 = 0;
+            for (int i = 0; i < rangeCards[0].Count; i++)
+            {
+                longRangeAtackPointsP0 += longRangeCards[0][i].AttackPoints;
+            }
+            for (int i = 0; i < rangeCards[1].Count; i++)
+            {
+                longRangeAtackPointsP1 += longRangeCards[1][i].AttackPoints;
+            }
+            LRangeAP = new int[longRangeAtackPointsP0, longRangeAtackPointsP1];
+            return LRangeAP;
         }
     }
 }

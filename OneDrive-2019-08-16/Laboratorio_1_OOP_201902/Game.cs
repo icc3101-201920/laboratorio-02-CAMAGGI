@@ -63,15 +63,21 @@ namespace Laboratorio_1_OOP_201902
         //Metodos
         public bool CheckIfEndGame()
         {
-            if (Players[0].LifePoints() == 0 || Players[1].LifePoints() == 0)
+            if (Players[0].LifePoints == 0 || Players[1].LifePoints == 0)
             {
                 return true;
-            };
+            }
             return false;
         }
-        public bool GetWinner()
+        public string GetWinner()
         {
-            throw new NotImplementedException();
+            string Winner = Players[0].Id.ToString();
+            if (Players[0].LifePoints == 0)
+            {
+                Winner = Players[1].Id.ToString();
+            }
+            return "Player  es el ganador".Insert(6,Winner);
+
         }
         public void Play()
         {

@@ -25,7 +25,7 @@ namespace Laboratorio_1_OOP_201902
         //Constructor
         public Player()
         {
-            LifePoints = LIFE_POINTS;
+            LifePoints= LIFE_POINTS;
             AttackPoints = START_ATTACK_POINTS;
             Deck = new Deck();
             Hand = new Hand();
@@ -68,11 +68,7 @@ namespace Laboratorio_1_OOP_201902
             }
         }
 
-        internal int LifePoints()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public Hand Hand
         {
             get

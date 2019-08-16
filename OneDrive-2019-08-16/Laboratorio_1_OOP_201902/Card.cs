@@ -2,23 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Laboratorio_1_OOP_201902.Card
+namespace Laboratorio_1_OOP_201902
 {
-    public class SpecialCard
+    public class Card
     {
         //Atributos
-        private string name;
-        private string type;
-        private string buffType;
-        private string effect;
+        protected string name;
+        protected string type;
+        protected string effect;
 
         //Constructor
-        public SpecialCard(string name, string type, string effect)
+        public Card(string name, string type, string effect)
         {
-            Name = name;
-            Type = type;
-            Effect = effect;
-            BuffType = null;
+            this.name=name;
+            this.type=type;
+            this.effect=effect;
         }
 
         //Propiedades
@@ -44,18 +42,6 @@ namespace Laboratorio_1_OOP_201902.Card
                 this.type = value;
             }
         }
-        //Propiedades
-        public string BuffType
-        {
-            get
-            {
-                return this.buffType;
-            }
-            set
-            {
-                this.buffType = value;
-            }
-        }
         public string Effect
         {
             get
@@ -67,7 +53,8 @@ namespace Laboratorio_1_OOP_201902.Card
                 this.effect = value;
             }
         }
-
+       
 
     }
 }
+

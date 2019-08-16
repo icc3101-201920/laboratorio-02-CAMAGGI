@@ -145,21 +145,36 @@ namespace Laboratorio_1_OOP_201902
         {
             longRangeCards[PlayerId - 1].Clear();
         }
+        public void DestroyCombatCards(int PlayerId)
+        {
+            DestroyMeleeCard(PlayerId);
+            DestroyRangeCard(PlayerId);
+            DestroyLongRangeCard(PlayerId);
+
+        }
         public void DestroySpecialMeleeCard(int PlayerId)
         {
-            throw new NotImplementedException();
+            specialMeleeCards.SetValue(null,0);
         }
         public void DestroySpecialRangeCard(int PlayerId)
         {
-            throw new NotImplementedException();
+            specialRangeCards.SetValue(null,0);
         }
         public void DestroySpecialLongRangeCard(int PlayerId)
         {
-            throw new NotImplementedException();
+            specialLongRangeCards.SetValue(null, 0);
         }
         public void DestroyWeatherCard(int PlayerId)
         {
-            throw new NotImplementedException();
+            weatherCards.Clear();
+        }
+        public void DestroySpecialCard(int PlayerId)
+        {
+            DestroySpecialLongRangeCard(PlayerId);
+            DestroySpecialMeleeCard(PlayerId);
+            DestroySpecialRangeCard(PlayerId);
+            DestroyWeatherCard(PlayerId);
+            
         }
         public int[,] GetMeleeAttackPoints()
         {

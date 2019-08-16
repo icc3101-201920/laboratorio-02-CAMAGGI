@@ -7,16 +7,22 @@ namespace Laboratorio_1_OOP_201902
 {
     public class Deck
     {
-        private List<CombatCard> combatCards;
-        private List<SpecialCard> SpecialCards;
+        protected List<CombatCard> combatCards;
+        protected List<SpecialCard> SpecialCards;
 
         public Deck()
         {
 
         }
 
-        public List<CombatCard> CombatCards { get => combatCards; set => combatCards = value; }
-        public List<SpecialCard> SpecialCards1 { get => SpecialCards; set => SpecialCards = value; }
+        public List<CombatCard> CombatCards
+        {
+            get => combatCards; set => combatCards = value;
+        }
+        public List<SpecialCard> SpecialCards1
+        {
+            get => SpecialCards; set => SpecialCards = value;
+        }
 
         public void AddCombatCard(CombatCard combatCard)
         {
